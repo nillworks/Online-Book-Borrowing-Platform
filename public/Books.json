@@ -1,0 +1,112 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Silent Forest",
+      "author": "John Carter",
+      "description": "A mysterious story about a forest where no one dares to enter.",
+      "category": "Story",
+      "available_quantity": 5,
+      "image_url": "https://m.media-amazon.com/images/I/81o8SNPuY7L._UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "React Mastery",
+      "author": "Sarah Lee",
+      "description": "A complete guide to mastering React.js for modern web development.",
+      "category": "Tech",
+      "available_quantity": 8,
+      "image_url": "https://m.media-amazon.com/images/I/81x8Qt-q1ZL._UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Quantum World",
+      "author": "Dr. Alan Smith",
+      "description": "An introduction to quantum physics and its real-world applications.",
+      "category": "Science",
+      "available_quantity": 6,
+      "image_url": "https://www.hup.harvard.edu/img/feeds/jackets/9780674018327.png?fm=jpg&q=80&fit=max&w=630"
+    },
+    {
+      "id": 4,
+      "title": "Lost in Time",
+      "author": "Emily Watson",
+      "description": "A time-travel story full of twists and unexpected turns.",
+      "category": "Story",
+      "available_quantity": 4,
+      "image_url": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651062928l/60522318.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Next.js Pro",
+      "author": "David Kim",
+      "description": "Learn server-side rendering and modern web apps using Next.js.",
+      "category": "Tech",
+      "available_quantity": 7,
+      "image_url": "https://d2sofvawe08yqg.cloudfront.net/book-next-react/s_hero2x?1713792430&1713792430"
+    },
+    {
+      "id": 6,
+      "title": "Space Exploration",
+      "author": "Neil Johnson",
+      "description": "Discover the mysteries of the universe and space missions.",
+      "category": "Science",
+      "available_quantity": 3,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6mXoVdW4KlSpRmjTHK1-iVl2arww_327uMg&s"
+    },
+    {
+      "id": 7,
+      "title": "Hidden Truth",
+      "author": "Michael Brown",
+      "description": "A detective story uncovering deep secrets.",
+      "category": "Story",
+      "available_quantity": 9,
+      "image_url": "https://cdn2.penguin.com.au/covers/original/9780593483695.jpg"
+    },
+    {
+      "id": 8,
+      "title": "JavaScript Deep Dive",
+      "author": "Chris Evans",
+      "description": "Advanced JavaScript concepts explained in simple terms.",
+      "category": "Tech",
+      "available_quantity": 10,
+      "image_url": "https://media.licdn.com/dms/image/v2/D4E22AQFXmGolYkaGhw/feedshare-shrink_800/B4EZU4VPtzGwAg-/0/1740406848792?e=2147483647&v=beta&t=grOMdL-XA6yKUlUBO0y3E-s3L9m_dwJYuAzrLn69F6U"
+    },
+    {
+      "id": 9,
+      "title": "Human Anatomy Basics",
+      "author": "Dr. Lisa Ray",
+      "description": "A beginner's guide to understanding the human body.",
+      "category": "Science",
+      "available_quantity": 5,
+      "image_url": "https://m.media-amazon.com/images/I/81UDFN0So4L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Dream Catcher",
+      "author": "Sophia Green",
+      "description": "A magical journey through dreams and reality.",
+      "category": "Story",
+      "available_quantity": 6,
+      "image_url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1611766265i/11570.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Full Stack Guide",
+      "author": "Alex Turner",
+      "description": "Become a full stack developer with this complete roadmap.",
+      "category": "Tech",
+      "available_quantity": 4,
+      "image_url": "https://down-sg.img.susercontent.com/file/my-11134201-7r98v-lxefum0yf3oq86"
+    },
+    {
+      "id": 12,
+      "title": "The Science of Mind",
+      "author": "Dr. Robert King",
+      "description": "Explore how the human brain works and thinks.",
+      "category": "Science",
+      "available_quantity": 7,
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/7/7f/The_Science_of_Mind.jpg"
+    }
+  ]
+}
