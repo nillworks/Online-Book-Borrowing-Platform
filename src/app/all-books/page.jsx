@@ -1,9 +1,11 @@
 import AllBooksPage from '@/Components/AllPages/AllBooksPage/AllBooksPage';
+import getBooksData from '@/lib/getBooksData';
 
-const AllBooks = () => {
+const AllBooks = async () => {
+  const bookData = await getBooksData();
   return (
     <div>
-      <AllBooksPage />
+      <AllBooksPage bookData={bookData} />
     </div>
   );
 };
