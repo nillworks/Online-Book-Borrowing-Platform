@@ -1,5 +1,11 @@
-const AllBooksPage = () => {
-  return <div>AllBooksPage</div>;
+import AllBooksPage from '@/Components/AllPages/AllBooksPage/AllBooksPage';
+
+const AllBooks = () => {
+  return (
+    <div>
+      <AllBooksPage />
+    </div>
+  );
 };
 
-export default AllBooksPage;
+export default AllBooks;
