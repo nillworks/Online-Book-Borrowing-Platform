@@ -1,6 +1,6 @@
 'use client';
 
-// import { authClient } from '@/lib/auth-client';
+import { authClient, signOut } from '@/lib/auth-client';
 import {
   Button,
   Card,
@@ -12,10 +12,13 @@ import {
   TextField,
   toast,
 } from '@heroui/react';
+import { Eye, EyeOff } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 
 export default function SignUpPage() {
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   const onSubmit = async e => {
@@ -23,33 +26,46 @@ export default function SignUpPage() {
 
     const formData = new FormData(e.currentTarget);
     const signUpFormData = Object.fromEntries(formData.entries());
-    console.log(signUpFormData);
 
-    // const { data, error } = await authClient.signUp.email({
-    //   name: signUpFormData.name,
-    //   email: signUpFormData.email,
-    //   password: signUpFormData.password,
-    //   image: signUpFormData.image,
-    //   callbackURL: '/',
-    // });
+    const { data, error } = await authClient.signUp.email({
+      name: signUpFormData.name,
+      email: signUpFormData.email,
+      password: signUpFormData.password,
+      image: signUpFormData.image,
+      // callbackURL: null,
+    });
 
-    // if (data) {
-    //   toast('Success', {
-    //     description: 'Account created successfully',
-    //   });
-    //   router.push('/');
-    // }
+    if (data) {
+      signOut();
+      toast.success('Registration Successful', {
+        actionProps: {
+          children: 'Welcome Back',
+          className: 'bg-success text-success-foreground text-white',
+        },
+        description: 'You have successfully registered to your account.',
+        timeout: 3000,
+      });
+      router.push('/auth/signin');
+    }
 
-    // if (error) {
-    //   toast('Error', {
-    //     description: error.message || 'Something went wrong',
-    //     variant: 'destructive',
-    //   });
-    // }
+    if (error) {
+      toast.danger('Registration Failed', {
+        actionProps: {
+          children: 'Try Again',
+          className: 'bg-danger text-danger-foreground text-white',
+        },
+        description:
+          error.message ||
+          'Something went wrong. Please check your details and try again.',
+        timeout: 3000,
+      });
+    }
+
+    console.log(data, error);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-lg">
         {/* Header */}
         <h1 className="text-3xl font-bold text-center mb-2">Join Lumina</h1>
@@ -63,7 +79,7 @@ export default function SignUpPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <TextField isRequired name="name" type="text">
               <Label>Full Name</Label>
-              <Input placeholder="John Doe" />
+              <Input placeholder="Enter Your Name" />
               <FieldError />
             </TextField>
 
@@ -96,7 +112,7 @@ export default function SignUpPage() {
             isRequired
             minLength={8}
             name="password"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             validate={value => {
               if (value.length < 8) {
                 return 'Password must be at least 8 characters';
@@ -105,7 +121,22 @@ export default function SignUpPage() {
             }}
           >
             <Label>Password</Label>
-            <Input placeholder="Enter your password" />
+
+            <div className="relative">
+              <Input
+                placeholder="Enter your password"
+                className="pr-10 w-full"
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute cursor-pointer right-3 top-1/2 -translate-y-1/2"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+
             <Description>Must be at least 8 characters.</Description>
             <FieldError />
           </TextField>

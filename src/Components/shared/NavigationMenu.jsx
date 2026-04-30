@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { useSession } from '@/lib/auth-client';
+import { Avatar } from '@heroui/react';
+import { signOut } from '@/lib/auth-client';
 
 export const navItems = [
   { id: 1, name: 'Home', path: '/', auth: false },
@@ -13,7 +16,9 @@ export const navItems = [
 
 const NavigationMenu = () => {
   const pathname = usePathname();
-  const isLoggedIn = null;
+  const { data } = useSession();
+
+  const isLoggedIn = data?.user;
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,12 +71,19 @@ const NavigationMenu = () => {
               </Link>
             </>
           ) : (
-            <>
-              <span className="text-sm text-gray-600">User</span>
-              <button className="rounded-lg bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600">
+            <div className="flex items-center gap-3">
+              <Avatar>
+                <Avatar.Image alt={isLoggedIn?.name} src={isLoggedIn?.image} />
+                <Avatar.Fallback>JD</Avatar.Fallback>
+              </Avatar>
+
+              <button
+                onClick={() => signOut()}
+                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+              >
                 Logout
               </button>
-            </>
+            </div>
           )}
         </div>
 
