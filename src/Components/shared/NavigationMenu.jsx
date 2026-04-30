@@ -13,7 +13,7 @@ export const navItems = [
 
 const NavigationMenu = () => {
   const pathname = usePathname();
-  const isLoggedIn = null; // replace with real auth later
+  const isLoggedIn = null;
   const [open, setOpen] = useState(false);
 
   return (
@@ -52,14 +52,14 @@ const NavigationMenu = () => {
           {!isLoggedIn ? (
             <>
               <Link
-                href="/login"
+                href="/auth/signin"
                 className="text-sm font-medium text-gray-600 hover:text-indigo-600"
               >
                 Sign In
               </Link>
 
               <Link
-                href="/register"
+                href="/auth/signup"
                 className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition"
               >
                 Get Started
