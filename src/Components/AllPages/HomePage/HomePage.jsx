@@ -1,25 +1,32 @@
 import BrowseByGenre from './BrowseByGenre';
+import FeaturedBooks from './FeaturedBooks';
 import Hero from './Hero';
 import MarqueePage from './MarqueePage';
 import TheLuminaExperience from './TheLuminaExperience';
 
 const HomePage = () => {
   return (
-    <>
-      <Hero />
+    <main className="space-y-10">
+      <section>
+        <Hero />
+      </section>
 
       <section>
         <MarqueePage />
       </section>
 
-      <section className="pt-20">
+      <section>
+        <FeaturedBooks />
+      </section>
+
+      <section>
         <BrowseByGenre />
       </section>
 
       <section>
         <TheLuminaExperience />
       </section>
-    </>
+    </main>
   );
 };
 

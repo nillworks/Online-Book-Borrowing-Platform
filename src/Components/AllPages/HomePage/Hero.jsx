@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import heroImage from '../../../../public/assets/heroimage.png';
 import { Play } from 'lucide-react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -23,9 +24,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 justify-center md:justify-start">
-            <button className="w-full cursor-pointer sm:w-auto bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition">
-              Browse Books
-            </button>
+            <Link href={`/all-books`}>
+              <button className="w-full cursor-pointer sm:w-auto bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition">
+                Browse Books
+              </button>
+            </Link>
 
             <button className="w-full cursor-pointer sm:w-auto flex items-center justify-center gap-2 px-5 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition">
               <Play /> Watch Demo
@@ -35,14 +38,11 @@ const Hero = () => {
 
         {/* Right Images */}
         <div className="">
-          {/* Back Card */}
-          <div className="right-2 sm:right-10 top-0 sm:top-4 rotate-6  p-2 sm:p-3 rounded-xl ">
-            <Image
-              src={heroImage}
-              alt="book"
-              className=" object-cover rounded-md"
-            />
-          </div>
+          <Image
+            src={heroImage}
+            alt="book"
+            className=" object-cover rounded-md"
+          />
         </div>
       </div>
     </section>
