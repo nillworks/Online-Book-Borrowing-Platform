@@ -64,6 +64,12 @@ export default function SignUpPage() {
     console.log(data, error);
   };
 
+  const handleSignUpWithGoogle = async () => {
+    const data = await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-lg">
@@ -159,6 +165,7 @@ export default function SignUpPage() {
 
         {/* Google Button */}
         <Button
+          onClick={handleSignUpWithGoogle}
           variant="secondary"
           className="w-full flex items-center justify-center gap-2"
         >

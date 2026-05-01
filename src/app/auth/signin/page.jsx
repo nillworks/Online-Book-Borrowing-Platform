@@ -22,6 +22,7 @@ const SignInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
+  // Email Password Login
   const onSubmit = async e => {
     e.preventDefault();
 
@@ -58,6 +59,24 @@ const SignInPage = () => {
         timeout: 3000,
       });
     }
+  };
+
+  // Google Login
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: 'google',
+    });
+
+    // if (data) {
+    //   toast.success('Login Successful', {
+    //     actionProps: {
+    //       children: 'Welcome Back',
+    //       className: 'bg-success text-success-foreground text-white',
+    //     },
+    //     description: 'You have successfully signed in to your account.',
+    //     timeout: 3000,
+    //   });
+    // }
   };
 
   return (
@@ -139,7 +158,11 @@ const SignInPage = () => {
         </div>
 
         {/* Google Button */}
-        <Button variant="secondary" className="w-full flex items-center gap-2">
+        <Button
+          onClick={handleGoogleSignIn}
+          variant="secondary"
+          className="w-full flex items-center gap-2"
+        >
           <FcGoogle size={20} />
           Continue with Google
         </Button>

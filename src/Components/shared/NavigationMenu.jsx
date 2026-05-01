@@ -21,6 +21,19 @@ const NavigationMenu = () => {
   const isLoggedIn = data?.user;
   const [open, setOpen] = useState(false);
 
+  const handleSignOut = () => {
+    toast.success('Login Successful', {
+      actionProps: {
+        children: 'Welcome Back',
+        className: 'bg-success text-success-foreground text-white',
+      },
+      description: 'You have successfully signed in to your account.',
+      timeout: 3000,
+    });
+
+    signOut();
+  };
+
   return (
     <nav className="w-full border-b bg-white/70 backdrop-blur-md shadow-sm">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
@@ -74,7 +87,9 @@ const NavigationMenu = () => {
             <div className="flex items-center gap-3">
               <Avatar>
                 <Avatar.Image alt={isLoggedIn?.name} src={isLoggedIn?.image} />
-                <Avatar.Fallback>JD</Avatar.Fallback>
+                <Avatar.Fallback>
+                  {isLoggedIn?.name.slice(0, 2)}
+                </Avatar.Fallback>
               </Avatar>
 
               <button
@@ -119,7 +134,7 @@ const NavigationMenu = () => {
           {!isLoggedIn ? (
             <div className="flex flex-col gap-2 pt-2">
               <Link
-                href="/login"
+                href="/auth/signin"
                 onClick={() => setOpen(false)}
                 className="text-sm text-gray-600"
               >
@@ -127,7 +142,7 @@ const NavigationMenu = () => {
               </Link>
 
               <Link
-                href="/register"
+                href="/auth/signup"
                 onClick={() => setOpen(false)}
                 className="rounded-lg bg-indigo-600 px-4 py-2 text-sm text-white text-center"
               >
@@ -135,9 +150,21 @@ const NavigationMenu = () => {
               </Link>
             </div>
           ) : (
-            <button className="w-full rounded-lg bg-red-500 px-4 py-2 text-sm text-white">
-              Logout
-            </button>
+            <div className="flex items-center gap-3">
+              <Avatar>
+                <Avatar.Image alt={isLoggedIn?.name} src={isLoggedIn?.image} />
+                <Avatar.Fallback>
+                  {isLoggedIn?.name.slice(0, 2)}
+                </Avatar.Fallback>
+              </Avatar>
+
+              <button
+                onClick={handleSignOut}
+                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+              >
+                Logout
+              </button>
+            </div>
           )}
         </div>
       )}
