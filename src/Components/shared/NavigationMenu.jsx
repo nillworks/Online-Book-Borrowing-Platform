@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useSession } from '@/lib/auth-client';
-import { Avatar } from '@heroui/react';
+import { Avatar, toast } from '@heroui/react';
 import { signOut } from '@/lib/auth-client';
 
 export const navItems = [
@@ -93,7 +93,13 @@ const NavigationMenu = () => {
               </Avatar>
 
               <button
-                onClick={() => signOut()}
+                onClick={async () => {
+                  const { error } = await signOut();
+
+                  if (!error) {
+                    toast.danger('You just logged out successfully');
+                  }
+                }}
                 className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
               >
                 Logout

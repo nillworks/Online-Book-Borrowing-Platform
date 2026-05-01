@@ -32,7 +32,6 @@ export default function SignUpPage() {
       email: signUpFormData.email,
       password: signUpFormData.password,
       image: signUpFormData.image,
-      // callbackURL: null,
     });
 
     if (data) {
