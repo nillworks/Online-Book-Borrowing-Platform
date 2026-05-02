@@ -3,9 +3,12 @@
 import { authClient } from '@/lib/auth-client';
 import { Button, Modal, toast } from '@heroui/react';
 import { FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { useState } from 'react';
 import { BiUser } from 'react-icons/bi';
 
 const UpdateProfile = () => {
+  const [open, setOpen] = useState(false);
+
   const onSubmit = async e => {
     e.preventDefault();
 
@@ -30,13 +33,16 @@ const UpdateProfile = () => {
         description: 'Your profile information has been updated.',
         timeout: 3000,
       });
+      setOpen(false);
     }
   };
 
   return (
-    <Modal>
+    <Modal open={open} onOpenChange={setOpen}>
       {/* Trigger Button */}
-      <Button variant="secondary">Update Your Profile</Button>
+      <Button variant="secondary" onClick={() => setOpen(true)}>
+        Update Your Profile
+      </Button>
 
       <Modal.Backdrop>
         <Modal.Container>
@@ -70,6 +76,7 @@ const UpdateProfile = () => {
 
               {/* Submit */}
               <Button
+                slot="close"
                 type="submit"
                 className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
               >

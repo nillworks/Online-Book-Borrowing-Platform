@@ -26,7 +26,7 @@ const genres = [
 
 const BrowseByGenre = () => {
   return (
-    <section className="bg-[#EAE6F4]/30 py-10 px-4 sm:px-6 lg:px-8">
+    <section className="py-5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-center text-lg sm:text-2xl font-semibold text-gray-800 mb-8 lg:text-2xl">

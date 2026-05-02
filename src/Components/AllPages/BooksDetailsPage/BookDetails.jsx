@@ -1,6 +1,7 @@
 import { BookOpen, Laptop, Star } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import BookButton from './BookButton';
 
 export default function BookDetails({ book = {} }) {
   const {
@@ -19,7 +20,7 @@ export default function BookDetails({ book = {} }) {
 
   return (
     <div className="bg-gray-100 p-4 md:p-8 flex justify-center">
-      <div className="max-w-6xl w-full bg-white rounded-2xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl w-full bg-white rounded-2xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* LEFT: Book Cover */}
         <div className="flex flex-col items-center">
           <Image
@@ -100,19 +101,9 @@ export default function BookDetails({ book = {} }) {
             </div>
           </div>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col md:flex-row gap-4">
-            <button
-              disabled={available_quantity === 0}
-              className="flex-1 cursor-pointer bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white py-3 rounded-xl font-medium"
-            >
-              Borrow This Book
-            </button>
-
-            <button className="flex-1 cursor-pointer border border-gray-300 py-3 rounded-xl font-medium">
-              Save for Later
-            </button>
-          </div>
+          <>
+            <BookButton available_quantity={available_quantity} />
+          </>
 
           {/* Bottom cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">

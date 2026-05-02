@@ -7,6 +7,8 @@ import { Menu, X } from 'lucide-react';
 import { useSession } from '@/lib/auth-client';
 import { Avatar, toast } from '@heroui/react';
 import { signOut } from '@/lib/auth-client';
+import Image from 'next/image';
+import logo from '../../../public/assets/logo.jpg';
 
 export const navItems = [
   { id: 1, name: 'Home', path: '/', auth: false },
@@ -36,10 +38,14 @@ const NavigationMenu = () => {
 
   return (
     <nav className="w-full border-b bg-white/70 backdrop-blur-md shadow-sm">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-indigo-600">
-          LuminaBooks
+        <Link
+          href="/"
+          className="text-2xl flex gap-2 items-center font-bold text-indigo-600"
+        >
+          <Image className="w-10 h-10" src={logo} alt="LuminaBooks" /> Lumina
+          Books
         </Link>
 
         {/* Desktop Menu */}
@@ -165,7 +171,13 @@ const NavigationMenu = () => {
               </Avatar>
 
               <button
-                onClick={handleSignOut}
+                onClick={async () => {
+                  const { error } = await signOut();
+
+                  if (!error) {
+                    toast.danger('You just logged out successfully');
+                  }
+                }}
                 className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
               >
                 Logout

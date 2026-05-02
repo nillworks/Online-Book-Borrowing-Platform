@@ -6,7 +6,7 @@ import { Globe, Mail } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="border-t bg-[#f8fafc] mt-10">
-      <div className="max-w-[1200px] mx-auto px-4 py-10">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Top Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -63,7 +63,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t mt-10 pt-5 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-500">
-          <p>© 2024 LuminaBooks. All rights reserved.</p>
+          <p>© 2026 LuminaBooks. All rights reserved. Shipon Roy</p>
 
           <div className="flex items-center gap-2 mt-3 sm:mt-0">
             <Globe size={16} />

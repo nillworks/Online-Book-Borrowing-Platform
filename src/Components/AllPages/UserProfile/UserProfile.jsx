@@ -1,11 +1,9 @@
 'use client';
 
 import React from 'react';
-import { LogOut } from 'lucide-react';
 import Image from 'next/image';
 import { useSession } from '@/lib/auth-client';
 import UpdateProfile from './UpdateProfile';
-import { signOut } from '@/lib/auth-client';
 
 const UserProfile = () => {
   const { data } = useSession();

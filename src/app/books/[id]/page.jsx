@@ -2,6 +2,24 @@ import getBooksData from '@/lib/getBooksData';
 import BookDetails from './../../../Components/AllPages/BooksDetailsPage/BookDetails';
 import NotFound from '@/app/not-found';
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  // Filter Books Data
+  const bookData = await getBooksData();
+  const bookAllData = bookData.books;
+  const ex = bookAllData.find(book => book.id === Number(id));
+
+  if (!ex) {
+    return <NotFound />;
+  }
+
+  return {
+    title: ex.title,
+    description: ex.description,
+  };
+}
+
 const BookDetailsPage = async ({ params }) => {
   const { id } = await params;
 
