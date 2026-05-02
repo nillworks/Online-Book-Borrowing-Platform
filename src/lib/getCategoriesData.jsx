@@ -1,5 +1,7 @@
 const getCategoriesData = async () => {
-  const res = await fetch(`http://localhost:3000/category.json`);
+  const res = await fetch(
+    `https://online-book-borrowing-platform.vercel.app/category.json`,
+  );
   return res.json();
 };
 
