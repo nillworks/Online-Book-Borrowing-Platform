@@ -30,7 +30,7 @@ const FeaturedBooksCard = ({ book = {} }) => {
         : 'text-green-600';
 
   return (
-    <div className="group rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1">
+    <div className="group glass-card overflow-hidden">
       {/*  Image Section */}
       <div className="relative overflow-hidden">
         <Image
@@ -57,7 +57,7 @@ const FeaturedBooksCard = ({ book = {} }) => {
       {/* Content */}
       <div className="p-5 space-y-3">
         {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#4F46E5] transition">
+        <h3 className="text-lg font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
           {title}
         </h3>
 
@@ -76,7 +76,7 @@ const FeaturedBooksCard = ({ book = {} }) => {
 
         {/* Button */}
         <Link href={`/books/${id}`}>
-          <button className="w-full cursor-pointer mt-3 py-2 rounded-lg bg-[#4F46E5] text-white font-medium hover:bg-indigo-700 transition duration-300">
+          <button className="w-full cursor-pointer mt-3 py-2.5 rounded-xl btn-premium text-sm">
             View Details
           </button>
         </Link>

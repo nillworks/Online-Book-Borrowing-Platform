@@ -29,8 +29,8 @@ const BrowseByGenre = () => {
     <section className="py-5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-center text-lg sm:text-2xl font-semibold text-gray-800 mb-8 lg:text-2xl">
-          Browse by Genre
+        <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-900 mb-10 tracking-tight">
+          <span className="text-gradient">Browse by Genre</span>
         </h2>
 
         {/* Cards */}
@@ -38,7 +38,7 @@ const BrowseByGenre = () => {
           {genres.map(item => (
             <div
               key={item.id}
-              className="relative rounded-xl overflow-hidden group cursor-pointer"
+              className="relative glass-card overflow-hidden group cursor-pointer border-0"
             >
               {/* Image */}
               <Image

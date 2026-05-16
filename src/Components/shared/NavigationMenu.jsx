@@ -8,7 +8,7 @@ import { useSession } from '@/lib/auth-client';
 import { Avatar, toast } from '@heroui/react';
 import { signOut } from '@/lib/auth-client';
 import Image from 'next/image';
-import logo from '../../../public/assets/logo.jpg';
+import logo from '../../../public/assets/lumina_books_logo.png';
 
 export const navItems = [
   { id: 1, name: 'Home', path: '/', auth: false },
@@ -37,15 +37,15 @@ const NavigationMenu = () => {
   };
 
   return (
-    <nav className="w-full border-b bg-white/70 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 z-50 w-full glass border-b border-white/50">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="text-2xl flex gap-2 items-center font-bold text-indigo-600"
+          className="text-2xl flex gap-2 items-center font-extrabold tracking-tight"
         >
-          <Image className="w-10 h-10" src={logo} alt="LuminaBooks" /> Lumina
-          Books
+          <Image className="w-10 h-10 rounded-xl shadow-sm" src={logo} alt="NexaReads" /> 
+          <span className="text-gradient">NexaReads</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -55,14 +55,14 @@ const NavigationMenu = () => {
               <li key={item.id}>
                 <Link
                   href={item.path}
-                  className={`relative pb-1 transition-all
+                  className={`relative pb-1 transition-all duration-300
                     ${
                       pathname === item.path
-                        ? 'text-indigo-600 after:w-full'
-                        : 'text-gray-600 hover:text-indigo-600'
+                        ? 'text-blue-600 after:w-full'
+                        : 'text-slate-600 hover:text-blue-600'
                     }
                     after:absolute after:left-0 after:-bottom-1 after:h-[2px]
-                    after:w-0 after:bg-indigo-600 after:transition-all`}
+                    after:w-0 after:bg-blue-600 after:transition-all after:duration-300`}
                 >
                   {item.name}
                 </Link>
@@ -77,14 +77,14 @@ const NavigationMenu = () => {
             <>
               <Link
                 href="/auth/signin"
-                className="text-sm font-medium text-gray-600 hover:text-indigo-600"
+                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
               >
                 Sign In
               </Link>
 
               <Link
                 href="/auth/signup"
-                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition"
+                className="btn-premium px-5 py-2.5 text-sm rounded-xl"
               >
                 Get Started
               </Link>
@@ -106,7 +106,7 @@ const NavigationMenu = () => {
                     toast.danger('You just logged out successfully');
                   }
                 }}
-                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+                className="rounded-xl cursor-pointer bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 font-medium px-4 py-2 text-sm transition-colors border border-red-100"
               >
                 Logout
               </button>
@@ -133,8 +133,8 @@ const NavigationMenu = () => {
                 key={item.id}
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className={`block text-sm font-medium ${
-                  pathname === item.path ? 'text-indigo-600' : 'text-gray-600'
+                className={`block text-sm font-medium transition-colors ${
+                  pathname === item.path ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'
                 }`}
               >
                 {item.name}
@@ -148,7 +148,7 @@ const NavigationMenu = () => {
               <Link
                 href="/auth/signin"
                 onClick={() => setOpen(false)}
-                className="text-sm text-gray-600"
+                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
               >
                 Sign In
               </Link>
@@ -156,7 +156,7 @@ const NavigationMenu = () => {
               <Link
                 href="/auth/signup"
                 onClick={() => setOpen(false)}
-                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm text-white text-center"
+                className="btn-premium px-5 py-2.5 text-sm rounded-xl text-center"
               >
                 Get Started
               </Link>
@@ -178,7 +178,7 @@ const NavigationMenu = () => {
                     toast.danger('You just logged out successfully');
                   }
                 }}
-                className="rounded-lg cursor-pointer bg-red-500 px-4 py-2 text-sm text-white hover:bg-red-600"
+                className="rounded-xl cursor-pointer bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 font-medium px-4 py-2 text-sm transition-colors border border-red-100"
               >
                 Logout
               </button>

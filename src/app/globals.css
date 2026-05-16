@@ -2,6 +2,24 @@
 @import '@heroui/styles';
 
 @theme {
-  --color-primaryColor: #4f46e5;
-  --color-bgPrimary: #f7f3fe;
+  --color-primaryColor: #2563eb; /* blue-600 */
+  --color-bgPrimary: #f8fafc; /* slate-50 */
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-slate-200/50 shadow-sm;
+  }
+  .glass-card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgb(0,0,0,0.08)] transition-all duration-400 ease-out;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500;
+  }
+  .bg-gradient-premium {
+    @apply bg-[#f8fafc]; /* Clean slate background instead of complex gradient */
+  }
+  .btn-premium {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95;
+  }
 }

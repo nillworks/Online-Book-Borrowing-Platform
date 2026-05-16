@@ -19,10 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#fcf8ff] font-sans">
+      <body className="min-h-full flex flex-col bg-gradient-premium font-sans text-gray-800">
         <Toast.Provider placement={'top'} />
         <NavigationMenu />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

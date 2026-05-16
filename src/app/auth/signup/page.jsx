@@ -73,7 +73,7 @@ export default function SignUpPage() {
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-lg">
         {/* Header */}
-        <h1 className="text-3xl font-bold text-center mb-2">Join Lumina</h1>
+        <h1 className="text-3xl font-bold text-center mb-2">Join NexaReads</h1>
         <p className="text-sm text-gray-500 text-center mb-6">
           Create your account to start your reading journey.
         </p>

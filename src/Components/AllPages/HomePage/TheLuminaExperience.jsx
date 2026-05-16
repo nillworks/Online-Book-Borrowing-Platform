@@ -13,30 +13,29 @@ const TheLuminaExperience = () => {
       title: 'Curated Quality',
       description:
         'Every book in our collection passes a rigorous formatting and quality check for the best reading experience.',
-      icon: <BookOpen className="w-6 h-6 text-primaryColor" />,
-      bgColor: 'bg-[#E2DFFF]',
+      icon: <BookOpen className="w-6 h-6 text-blue-600" />,
+      bgColor: 'bg-blue-50',
     },
     {
       title: 'Cloud Sync',
       description:
         'Start reading on your laptop and finish on your phone. Your progress and highlights are always in sync.',
-      icon: <Laptop className="w-6 h-6 text-[#006172]" />,
-      bgColor: 'bg-[#ACEDFF]',
+      icon: <Laptop className="w-6 h-6 text-cyan-600" />,
+      bgColor: 'bg-cyan-50',
     },
     {
       title: 'Offline Access',
       description:
         'Download your library and read anytime, anywhere, even without an internet connection.',
-      icon: <Zap className="w-6 h-6 text-[#7B2F00]" />,
-      bgColor: 'bg-[#FFDBCC]',
+      icon: <Zap className="w-6 h-6 text-sky-600" />,
+      bgColor: 'bg-sky-50',
     },
-    // ➕ Extra Card
     {
       title: 'AI Recommendations',
       description:
         'Get smart book suggestions based on your reading habits, interests, and favorite genres for a more personalized reading experience.',
-      icon: <Sparkles className="w-6 h-6 text-[#6D28D9]" />,
-      bgColor: 'bg-[#EDE9FE]',
+      icon: <Sparkles className="w-6 h-6 text-indigo-600" />,
+      bgColor: 'bg-indigo-50',
     },
   ];
 
@@ -44,9 +43,9 @@ const TheLuminaExperience = () => {
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            The Lumina Experience
+        <div className="text-center mb-16 relative">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+            <span className="text-gradient">The NexaReads Experience</span>
           </h2>
           <p className="text-gray-600 text-lg">
             We’ve reimagined the digital library for the modern intellectual.
@@ -75,9 +74,9 @@ const TheLuminaExperience = () => {
         >
           {features.map((feature, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-[#F0ECF9] p-10 rounded-[2rem] flex flex-col items-start transition-transform hover:-translate-y-1 duration-300 cursor-pointer h-full">
+              <div className="glass-card p-10 rounded-3xl flex flex-col items-start cursor-pointer h-full group">
                 {/* Icon */}
-                <div className={`p-3 rounded-xl ${feature.bgColor} mb-6`}>
+                <div className={`p-4 rounded-2xl ${feature.bgColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {feature.icon}
                 </div>
 

@@ -11,9 +11,9 @@ const UserProfile = () => {
 
   return (
     <div className="flex items-center justify-center py-20">
-      <div className="w-[350px] bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="w-[350px] glass-card overflow-hidden">
         {/* Top Gradient */}
-        <div className="h-24 bg-gradient-to-r from-indigo-700 to-teal-700" />
+        <div className="h-28 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-90" />
 
         {/* Profile Section */}
         <div className="flex flex-col items-center -mt-12 px-6 pb-6 space-y-2">

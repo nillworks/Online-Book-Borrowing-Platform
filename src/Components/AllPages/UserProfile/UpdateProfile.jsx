@@ -40,7 +40,7 @@ const UpdateProfile = () => {
   return (
     <Modal open={open} onOpenChange={setOpen}>
       {/* Trigger Button */}
-      <Button variant="secondary" onClick={() => setOpen(true)}>
+      <Button className="btn-premium px-6 py-2.5 mt-2 rounded-xl" onClick={() => setOpen(true)}>
         Update Your Profile
       </Button>
 
@@ -78,7 +78,7 @@ const UpdateProfile = () => {
               <Button
                 slot="close"
                 type="submit"
-                className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                className="w-full btn-premium rounded-xl py-2.5"
               >
                 Save Changes →
               </Button>

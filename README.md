@@ -62,10 +62,10 @@ modern technologies to ensure performance, scalability, and security.
 
 ```bash
 # Clone repository
-git clone https://github.com/nillworks/Online-Book-Borrowing-Platform-
+git clone https://github.com/nillworks/Online-Book-Borrowing-Platform
 
 # Go to project folder
-cd Online-Book-Borrowing-Platform-
+cd Online-Book-Borrowing-Platform
 
 # Install dependencies
 npm install

@@ -11,7 +11,9 @@ const FeaturedBooks = async () => {
       {/* title and subtile */}
       <div className="flex items-center justify-between">
         <div className="space-y-1">
-          <h2 className="font-bold text-3xl text-[#1B1B24]">Featured Books</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            <span className="text-gradient">Featured Books</span>
+          </h2>
           <p className="text-[#464555]">
             Hand-picked by our editors this week.
           </p>

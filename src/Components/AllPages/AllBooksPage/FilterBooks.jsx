@@ -6,11 +6,10 @@ const FilterBooks = async () => {
   const categoryData = await getCategoriesData();
   return (
     <div
-      className="space-y-2 flex flex-col sm:flex-row gap-4
-    "
+      className="space-y-2 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto"
     >
       <div>
-        <h2 className="text-2xl font-medium ">Filter Category</h2>
+        <h2 className="text-lg font-bold text-gray-800 tracking-tight">Categories:</h2>
       </div>
 
       <div className="flex gap-2">
@@ -23,7 +22,9 @@ const FilterBooks = async () => {
             }
             key={category.id}
           >
-            <Button variant="secondary">{category.name}</Button>
+            <Button className="bg-white border border-slate-200 shadow-sm text-slate-700 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 hover:-translate-y-0.5 transition-all duration-300 rounded-xl font-medium">
+              {category.name}
+            </Button>
           </Link>
         ))}
       </div>

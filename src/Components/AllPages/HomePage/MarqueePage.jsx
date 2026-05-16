@@ -14,19 +14,19 @@ const menuItems = [
 
 const MarqueePage = () => {
   return (
-    <div className=" bg-[#f5f3ff] border-t border-b border-[#ddd]">
+    <div className="glass border-y border-slate-200 shadow-sm relative z-20">
       <div className=" container max-w-7xl mx-auto py-4">
         <Marquee speed={100} pauseOnHover={true}>
           <div className="flex items-center gap-10 px-4">
             {menuItems.map(item => (
               <div key={item.id} className="flex items-center gap-6">
                 {/* Text */}
-                <span className="text-gray-700 font-medium text-sm sm:text-base">
+                <span className="text-blue-800 font-semibold text-sm sm:text-base uppercase tracking-wider">
                   {item.title}
                 </span>
 
                 {/* Dot */}
-                <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
               </div>
             ))}
           </div>

@@ -21,7 +21,7 @@ const BookButton = ({ available_quantity }) => {
           }
         }}
         disabled={available_quantity === 0}
-        className="flex-1 cursor-pointer bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 text-white py-3 rounded-xl font-medium"
+        className="flex-1 cursor-pointer btn-premium py-3.5 rounded-xl disabled:opacity-50 disabled:pointer-events-none"
       >
         Borrow This Book
       </button>
@@ -35,7 +35,7 @@ const BookButton = ({ available_quantity }) => {
             router.push('/auth/signin');
           }
         }}
-        className="flex-1 cursor-pointer border border-gray-300 py-3 rounded-xl font-medium"
+        className="flex-1 cursor-pointer bg-white border border-slate-200 py-3.5 rounded-xl font-semibold text-slate-700 hover:text-blue-600 hover:border-blue-200 hover:bg-blue-50 hover:-translate-y-0.5 shadow-sm hover:shadow transition-all duration-300"
       >
         Save for Later
       </button>
